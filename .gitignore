@@ -7,6 +7,9 @@
 
 .mtj.tmp/
 
+**.idea
+*.idea
+
 # Package Files #
 *.jar
 *.war
