@@ -1,3 +1,5 @@
+stockex/config/MyHandler.class
 stockex/config/WebSocketConfig.class
 stockex/App.class
+stockex/modals/Sma.class
 stockex/controllers/StockExchangeController.class

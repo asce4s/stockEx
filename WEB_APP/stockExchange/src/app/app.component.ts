@@ -26,7 +26,7 @@ export class AppComponent {
       console.log('connected');
 
       //subscribe
-      this.subscription = stomp.subscribe('/data/subscribe', (d) => {
+      this.subscription = stomp.subscribe('data', (d) => {
         console.log("afh");
         console.log(d);
       });
