@@ -13,7 +13,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/data");
-        config.setApplicationDestinationPrefixes("/app");
+        //config.setApplicationDestinationPrefixes("/app");
     }
 
     @Override

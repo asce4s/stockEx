@@ -1,5 +1,8 @@
-stockex/config/MyHandler.class
 stockex/config/WebSocketConfig.class
+stockex/dto/ChartDto.class
+stockex/services/StockDataService.class
+stockex/dto/SeriesDto.class
+stockex/config/MyHandler.class
+stockex/utils/Constants.class
 stockex/App.class
-stockex/modals/Sma.class
 stockex/controllers/StockExchangeController.class
