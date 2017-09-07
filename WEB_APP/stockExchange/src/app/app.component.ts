@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { StompService } from 'ng2-stomp-service';
 import 'd3';
 import 'nvd3';
+import {MessageModel} from "./models/messageModel";
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,13 @@ export class AppComponent implements OnInit {
 
   options;
   data;
+
+  message : MessageModel = {
+    symbol:'MSFT',
+    function:'TIME_SERIES_INTRADAY',
+    timeFrame :'1min'
+  }
+
   ngOnInit() {
     this.connect();
     this.initChart()
@@ -39,11 +47,12 @@ export class AppComponent implements OnInit {
 
       //subscribe
       this.subscription = this.stomp.subscribe('/data/subscribe', (d) => {
-        this.data= [d]
+        if(d.symbol == this.message.symbol && d.timeFrame == this.message.timeFrame)
+          this.data= [d]
       });
 
       //send data
-      // stomp.send('/app/send',JSON.stringify({"name":"asjkhfd"}));
+       this.stomp.send('/message',this.message);
       //unsubscribe
       // this.subscription.unsubscribe();
 
@@ -70,7 +79,7 @@ export class AppComponent implements OnInit {
         showValues: true,
         useInteractiveGuideline: true,
         useNiceScale: true,
-        duration: 0,
+        duration: 500,
         xAxis: {
           axisLabel: new Date().toDateString(),
           tickFormat: function(d) {
@@ -94,6 +103,11 @@ export class AppComponent implements OnInit {
         }
       }
     }
+  }
+
+  updateChart():void{
+    console.info(this.message)
+    this.stomp.send('/message',this.message);
   }
 
 

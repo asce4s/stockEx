@@ -2,6 +2,8 @@ stockex/config/WebSocketConfig.class
 stockex/dto/ChartDto.class
 stockex/services/StockDataService.class
 stockex/dto/SeriesDto.class
+stockex/services/impl/StockDataServiceImpl.class
+stockex/dto/MessageDto.class
 stockex/config/MyHandler.class
 stockex/utils/Constants.class
 stockex/App.class

@@ -1,1 +1,44 @@
+<div class="col-md-12">
+  <h1 class="text-center">Intraday Trades</h1>
+</div>
+
+<div class="col-md-12 well">
+  <form action="">
+    <div class="form-group col-md-6">
+      <label for="">Symbol</label>
+      <select name="symbol"  class="form-control" [(ngModel)]="message.symbol" (change)="updateChart()">
+        <option>GOOG</option>
+        <option>MSFT</option>
+        <option>APP</option>
+        <option>PIH</option>
+        <option>TURN</option>
+        <option>FCCY</option>
+      </select>
+    </div>
+
+    <!--<div class="form-group col-md-4">-->
+      <!--<label for="">Time Series</label>-->
+      <!--<select name="symbol"  class="form-control" [(ngModel)]="message.function" (change)="updateChart()">-->
+        <!--<option value="TIME_SERIES_INTRADAY">Intraday</option>-->
+        <!--<option value="TIME_SERIES_DAILY">Daily</option>-->
+        <!--<option value="TIME_SERIES_WEEKLY">Weekly</option>-->
+        <!--<option value="TIME_SERIES_MONTHLY">Monthly</option>-->
+      <!--</select>-->
+    <!--</div>-->
+
+    <div class="form-group col-md-6">
+      <label for="">Interval</label>
+      <select name="interval"  class="form-control" [(ngModel)]="message.timeFrame" (change)="updateChart()">
+        <option >1min</option>
+        <option>5min</option>
+        <option >15min</option>
+      </select>
+    </div>
+
+
+
+  </form>
+</div>
+<div class="col-md-12">
 <nvd3 [options]="options" [data]="data" ></nvd3>
+</div>

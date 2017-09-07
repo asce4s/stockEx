@@ -2,13 +2,13 @@ package stockex.controllers;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import stockex.dto.MessageDto;
 import stockex.services.StockDataService;
 
 
@@ -25,15 +25,17 @@ public class StockExchangeController {
     private StockDataService stockDataService;
 
     @SubscribeMapping("/data/subscribe")
-    public void getData() {
-
+    @MessageMapping("/message")
+    @SendTo("/data/subscribe")
+    public void getData(MessageDto msg) {
+        logger.info(msg.toString());
         try {
             while(true){
-            stockDataService.getData();
-            Thread.sleep(50000);
+            stockDataService.getData(msg);
+            Thread.sleep(10000);
             }
         }catch (Exception ex){
-            System.out.println(ex.getMessage());
+            logger.error(ex.getMessage());
         }
 
     }

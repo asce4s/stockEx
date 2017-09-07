@@ -1,8 +1,10 @@
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/config/WebSocketConfig.java
+/home/ace/projects/stockex/API/stockex/src/main/java/stockex/utils/Constants.java
+/home/ace/projects/stockex/API/stockex/src/main/java/stockex/dto/MessageDto.java
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/services/StockDataService.java
+/home/ace/projects/stockex/API/stockex/src/main/java/stockex/services/impl/StockDataServiceImpl.java
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/dto/SeriesDto.java
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/config/MyHandler.java
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/dto/ChartDto.java
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/App.java
-/home/ace/projects/stockex/API/stockex/src/main/java/stockex/dao/StockDao.java
 /home/ace/projects/stockex/API/stockex/src/main/java/stockex/controllers/StockExchangeController.java

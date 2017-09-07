@@ -9,6 +9,8 @@ public class ChartDto implements Serializable {
 
     private List<SeriesDto> values;
 
+    private String symbol,timeFrame;
+
     public ChartDto(){}
 
     public ChartDto(List<SeriesDto> values) {
@@ -23,7 +25,23 @@ public class ChartDto implements Serializable {
         this.values = values;
     }
 
-//    @Override
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getTimeFrame() {
+        return timeFrame;
+    }
+
+    public void setTimeFrame(String timeFrame) {
+        this.timeFrame = timeFrame;
+    }
+
+    //    @Override
 //    public String toString() {
 //        String series="";
 //         for (SeriesDto s:values){
